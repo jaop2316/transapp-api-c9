@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codparada:</strong>
+  <%= @station.codParada %>
+</p>
+
+<p>
+  <strong>Nomparada:</strong>
+  <%= @station.nomParada %>
+</p>
+
+<p>
+  <strong>Latparada:</strong>
+  <%= @station.latParada %>
+</p>
+
+<p>
+  <strong>Lonparada:</strong>
+  <%= @station.lonParada %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @station.route %>
+</p>
+
+<%= link_to 'Edit', edit_station_path(@station) %> |
+<%= link_to 'Back', stations_path %>

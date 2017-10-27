@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026165303) do
+ActiveRecord::Schema.define(version: 20171026223749) do
 
   create_table "routes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "codRuta"
@@ -21,4 +21,16 @@ ActiveRecord::Schema.define(version: 20171026165303) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "stations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "codParada"
+    t.string "nomParada"
+    t.float "latParada", limit: 24
+    t.float "lonParada", limit: 24
+    t.bigint "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_stations_on_route_id"
+  end
+
+  add_foreign_key "stations", "routes"
 end
